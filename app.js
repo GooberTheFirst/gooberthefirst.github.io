@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "https://wallpapers.com/images/high/funny-cat-memes-pictures-q0t5fezyz0yo65wb.webp",
         "https://wallpapers.com/images/high/funny-cat-memes-pictures-yj0ymvvtw4dlvqrb.webp",
         "https://wallpapers.com/images/high/cute-funny-cat-pictures-dgdslz37nqeye01l.webp",
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F9b%2F4b%2F99%2F9b4b99b541fd1e7b31189fc71e214468.jpg&f=1&nofb=1&ipt=3770e5ecbc556e29318f9e1fb52b329149bcd6de80bd17b97d094a43daf11ea7",
+        "https://i.pinimg.com/736x/0e/72/61/0e7261f2fa1a52523d94b3e5a336c0aa.jpg",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fe4%2F83%2F29%2Fe4832963257aff8de1522a02e8549f12.jpg&f=1&nofb=1&ipt=1f78bcc2f226639f5a084234b7e7eb154acc0ca6bf4d73da4f34b04ef91df937",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Ff7%2F57%2F09%2Ff757091038f7a0ed260dcfdc825d41cc.jpg&f=1&nofb=1&ipt=96e3004e35782873831a70aec900af001f4694cddbf764f5e4e99d00afe241b0",
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F236x%2Ff3%2F91%2Ffc%2Ff391fc897a8ce55eb1276c9b760b6e1d.jpg&f=1&nofb=1&ipt=e8a603d72849c73a9b8b8582b70e82f68b25b20dd8c2a31a5632333999050f78",
