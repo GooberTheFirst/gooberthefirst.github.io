@@ -43,8 +43,28 @@ document.addEventListener("DOMContentLoaded", () => {
         { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.ahYPB6tV4If_q8Xo7p_WjAHaHa%3Fpid%3DApi&f=1&ipt=e713eae5a119f0ad4df1b33583dadcd9319a9b81ed86239972ffa9ddc7a3f524&ipo=images", weight: 61 }
     ];
 
+    const topNav = document.createElement('nav');
+    topNav.className = 'top-nav';
+    topNav.innerHTML = '<button id="collection-btn" class="collection-btn">Collection</button>';
+    document.body.insertBefore(topNav, document.body.firstChild);
+
+    const collectionModal = document.createElement('div');
+    collectionModal.id = 'collection-modal';
+    collectionModal.className = 'collection-modal hidden';
+    collectionModal.innerHTML = `
+        <div class="collection-header">
+            <h2>Collectables</h2>
+            <span class="close-btn">&times;</span>
+        </div>
+        <div class="collection-grid"></div>
+    `;
+    document.body.appendChild(collectionModal);
+
     const imageContainerEl = document.querySelector(".img-container");
     const btnEl = document.querySelector(".btn");
+    const collectionBtn = document.getElementById('collection-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const collectionGrid = document.querySelector('.collection-grid');
 
     if (!imageContainerEl) {
         console.error('Error: .img-container element not found');
@@ -57,7 +77,94 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const buttonText = btnEl.querySelector("b");
-    if (buttonText) buttonText.textContent = "Load cats";
+    if (buttonText) buttonText.textContent = "Load cars";
+
+function initCollection() {
+    let collection = localStorage.getItem('catCollection');
+    if (!collection) {
+        const initialCollection = catImages.map(cat => ({
+            url: cat.url,
+            collected: false
+        }));
+        localStorage.setItem('catCollection', JSON.stringify(initialCollection));
+        return initialCollection;
+    }
+
+    const parsedCollection = JSON.parse(collection);
+    if (parsedCollection.length > 0 && 'count' in parsedCollection[0]) {
+        const migratedCollection = parsedCollection.map(cat => ({
+            url: cat.url,
+            collected: cat.collected
+        }));
+        localStorage.setItem('catCollection', JSON.stringify(migratedCollection));
+        return migratedCollection;
+    }
+
+    return parsedCollection;
+}
+
+function updateCollection(generatedCats) {
+    const collection = initCollection();
+
+    generatedCats.forEach(newCat => {
+        const baseNewCatUrl = newCat.url.split('?')[0];
+
+        const catIndex = collection.findIndex(cat => {
+            const baseCatUrl = cat.url.split('?')[0];
+            return baseCatUrl === baseNewCatUrl;
+        });
+
+        if (catIndex !== -1 && !collection[catIndex].collected) {
+            collection[catIndex].collected = true;
+            console.log(`New collectable unlocked: ${collection[catIndex].url}`);
+        }
+    });
+
+    localStorage.setItem('catCollection', JSON.stringify(collection));
+    renderCollection();
+}
+
+
+    function renderCollection() {
+        const collection = initCollection();
+        collectionGrid.innerHTML = '';
+
+        collection.forEach(cat => {
+            const catItem = document.createElement('div');
+            catItem.className = `cat-item ${cat.collected ? 'collected' : 'uncollected'}`;
+
+            const img = document.createElement('img');
+            img.src = cat.url;
+            img.alt = "Cat collectable";
+            img.className = "collection-img";
+
+            const countBadge = document.createElement('div');
+            countBadge.className = "count-badge";
+            countBadge.textContent = cat.count;
+
+            catItem.appendChild(img);
+            if (cat.count > 0) {
+                catItem.appendChild(countBadge);
+            }
+
+            collectionGrid.appendChild(catItem);
+        });
+    }
+
+    collectionBtn.addEventListener('click', () => {
+        collectionModal.classList.remove('hidden');
+        renderCollection();
+    });
+
+    closeBtn.addEventListener('click', () => {
+        collectionModal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === collectionModal) {
+            collectionModal.classList.add('hidden');
+        }
+    });
 
     loadRandomCats();
 
@@ -67,11 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadRandomCats() {
         imageContainerEl.innerHTML = "";
+        let generatedCats = [];
 
         let availableImages = [...catImages];
 
         for (let i = 0; i < 3 && availableImages.length > 0; i++) {
             const selectedImage = getRandomCatImage(availableImages);
+            generatedCats.push(selectedImage);
 
             const percentageValue = selectedImage.weight;
 
@@ -91,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const newImgEl = document.createElement("img");
             newImgEl.src = selectedImage.url;
-            newImgEl.alt = "Random cat image";
+            newImgEl.alt = "Once again, a random creature of the night that stalks deep with-in thy tall grass image";
 
             imageWrapper.appendChild(rarityText);
             imageWrapper.appendChild(newImgEl);
@@ -99,6 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             availableImages = availableImages.filter(img => img.url !== selectedImage.url);
         }
+
+        updateCollection(generatedCats);
     }
 
     function getRandomCatImage(images) {
