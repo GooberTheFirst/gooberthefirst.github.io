@@ -37,10 +37,29 @@ document.addEventListener("DOMContentLoaded", () => {
         { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.3Mlg6pTv8zJ4uXdXCZxRowHaHu%3Fpid%3DApi&f=1&ipt=391aa6dd7bd0a27e174f256ce33c97917a32e8a969381d1c7d82561199dc15f6&ipo=images", weight: 50 },
         { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.paVZ29NGYhxLtUCZ3FaclAHaJj%3Fpid%3DApi&f=1&ipt=d9355b4f4aa4b4a7adf2efd7ff48e2a86a3a3266a985ab3057bb57c7293a69ed&ipo=images", weight: 62 },
         { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%2Fid%2FOIP.-K1kdWVBEeDSYSjrqavGLAHaGU%3Fpid%3DApi&f=1&ipt=0bece8cbc9c8b342964c52e3dc908cefa9d8a22a4defcc2f60a6634cbdeb6fde&ipo=images", weight: 58 },
-        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F93%2Fe7%2F8e%2F93e78ec6a25161d42ffc179db0cf7bca.jpg&f=1&nofb=1&ipt=a8383239766d88161f588ac2fe88d1100e7c12677251a464413df50125670a68", weight: 66.79 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F93%2Fe7%2F8e%2F93e78ec6a25161d42ffc179db0cf7bca.jpg&f=1&nofb=1&ipt=a8383239766d88161f588ac2fe88d1100e7c12677251a464413df50125670a68", weight: 66.79/*👍*/ },
         { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.2VmLzvLXUwbw-HuwStFDvgAAAA%3Fpid%3DApi&f=1&ipt=4ce0b136f384e6039407fb0556b6113d42c7fcdd6878a31898458f50979aacdf&ipo=images", weight: 48 },
         { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.NUGnBAf-T-cH9ZzNX_rC1AHaHa%3Fpid%3DApi&f=1&ipt=64abb18b4e7fd16db390e52960b3e712b3c452b848d6078ee94b05119723ac7d&ipo=images", weight: 46 },
-        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.ahYPB6tV4If_q8Xo7p_WjAHaHa%3Fpid%3DApi&f=1&ipt=e713eae5a119f0ad4df1b33583dadcd9319a9b81ed86239972ffa9ddc7a3f524&ipo=images", weight: 61 }
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.ahYPB6tV4If_q8Xo7p_WjAHaHa%3Fpid%3DApi&f=1&ipt=e713eae5a119f0ad4df1b33583dadcd9319a9b81ed86239972ffa9ddc7a3f524&ipo=images", weight: 61 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F70%2F5f%2F93%2F705f93fe08fc12e0da5f79e28073490f.jpg&f=1&nofb=1&ipt=48fc245adc20b0e4311560d56bc1802072ca71de2104331560b66d06597d589d", weight: 53 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-r3vP7LhQfw%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=64a753d4c3bd35254b1d8220519bc5ccee8b73ce6447f832af403cb9f91d69ce", weight: 52 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F67%2F2a%2Ffc%2F672afc9bfbf27ed7b6d9cf39badf030b.jpg&f=1&nofb=1&ipt=cdac821b3b03ea521f25709354b2b796e6c67285bad70b5274e6c7c76033caea", weight: 62 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbestlifeonline.com%2Fwp-content%2Fuploads%2Fsites%2F3%2F2018%2F06%2Fcat-meme-94.jpg%3Fquality%3D82%26strip%3Dall&f=1&nofb=1&ipt=99111a5f3290e65565399df687681722979ef5469311e4dba10387d1372e77e2", weight: 49 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fb9%2F46%2F4c%2Fb9464c2956d880b5a1d4168c254541b3--life-advice-crazy-eyes.jpg&f=1&nofb=1&ipt=8c5d195eb4867c03162b740e1ee7a0539ad552e67950aeb0cc073dcbcade3108", weight: 52 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-8sZkKWu98rE%2FUiD3w_ilIuI%2FAAAAAAAAAUc%2Fywb03PKeRtA%2Fs1600%2Fcat-funny.jpg&f=1&nofb=1&ipt=387304fcd61a8cb7b302aa30260dbb97af1e455f7a245d74b212cb2e66c1a0e3", weight: 73 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbestlifeonline.com%2Fwp-content%2Fuploads%2Fsites%2F3%2F2018%2F06%2Fcat-meme-78.jpg%3Fresize%3D260&f=1&nofb=1&ipt=455a0122583a5d5afe8ac87700a3c33f975af532b7c7e52a08247f6fc94988fb", weight: 46 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F00%2F3b%2Ff0%2F003bf01bd170cb73302bfd16c804ee81.jpg&f=1&nofb=1&ipt=82cd5c33764527f3b7d9a86c428c275d3b4e270d1b5c7f399e345f1ed52d83bd", weight: 51 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D257254005590326%26get_thumbnail%3D1&f=1&nofb=1&ipt=da164694a48bf5f5538710a888c00d52a4b48d06f7b675652e1287eba1b02e1e", weight: 24.457458358 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.boredpanda.com%2Fblog%2Fwp-content%2Fuploads%2F2023%2F07%2Ffunny-cat-pics-and-memes-18-64a814a742582__700.jpg&f=1&nofb=1&ipt=12108d43a09a20ac9d08be675269f0ebc9503b9fceba2693741766d3ff592aa2", weight: 37 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F79%2Fa3%2F16%2F79a3168cf52edca304ff32db46e0f888.jpg&f=1&nofb=1&ipt=c9d6bf5cd70662b84b49c5b93c3580df90aafdfb0d951b04e12e0d6feb9ecf3e", weight: 46 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F22%2F21%2Fb6%2F2221b61a1589a476f40ba753b422b991.jpg&f=1&nofb=1&ipt=f22bd4e1b55585e18011510880c80817128a9277dd1464c03d50d1af1921643f", weight: 47 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F81%2Fea%2Fe8%2F81eae89270a21bdd32e2b474b7ef18d7.png&f=1&nofb=1&ipt=742b21c240c06c7cc7f92e456e86452ef916e0a44ee3971eb98fdc3a1c5407a5", weight: 58 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dreamsquote.com%2Fwp-content%2Fuploads%2F2024%2F02%2Fcat-memes-funny.jpg&f=1&nofb=1&ipt=c7b2d728bb6d188f8ff3332091aaf15f16a77ca5e25e7c9e2cc8eeb0ffdb6d9e", weight: 54 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F8c%2F28%2F48%2F8c284875b1ac5e5663a9a98774a894c9.jpg&f=1&nofb=1&ipt=7b7077778561d77cdbededc361d8a001c2821bb713826e6dec1486fae3d2f3fd", weight: 39 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F4b%2F16%2F83%2F4b1683db9806d6e4d853a3f350b6b273.jpg&f=1&nofb=1&ipt=56bc146af57729d9d7f3be3d36862aa53bc978645f7573d50d3004f7e39375b3", weight: 65 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F8a%2Faf%2F74%2F8aaf740f6c533deb84382834635ac9ec.jpg&f=1&nofb=1&ipt=a2aaa20f82590028b909fce4fb5aff089b105c07385a5c8780a392265cf538c8", weight: 63 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstyles.redditmedia.com%2Ft5_5x81u7%2Fstyles%2FcommunityIcon_t8en21sthsja1.jpg%3Fformat%3Dpjpg%26s%3D11f073ad0645f9e6498676fe364e648bcd23e123&f=1&nofb=1&ipt=7377b6946eecff1cda2bb14395ee5bbdef6591d24d1d7037bb440fb22a93362f", weight: 41 },
+        { url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Ff1%2F3a%2F32%2Ff13a3230c3f7b023f06fa66413bfb259.jpg&f=1&nofb=1&ipt=5717bce1ad365d411e672751c676a32b3c038157cf1fff3046a0dad7db86f24a", weight: 42 }
     ];
 
     const topNav = document.createElement('nav');
@@ -72,82 +91,167 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!btnEl) {
-        console.error('Error: .btn element not found');
+        console.error('Eror: .btn element not found');
         return;
     }
 
     const buttonText = btnEl.querySelector("b");
     if (buttonText) buttonText.textContent = "Load cars";
 
-function initCollection() {
-    let collection = localStorage.getItem('catCollection');
-    if (!collection) {
-        const initialCollection = catImages.map(cat => ({
+    function normalizeUrl(url) {
+        try {
+            if (url.includes('duckduckgo.com/iu/')) {
+                const params = new URLSearchParams(url.split('?')[1]);
+                const originalUrl = params.get('u');
+                if (originalUrl) {
+                    return normalizeUrl(decodeURIComponent(originalUrl));
+                }
+            }
+
+            const urlObj = new URL(url);
+            return `${urlObj.origin}${urlObj.pathname}`;
+        } catch (e) {
+            return url.split('?')[0].split('#')[0];
+        }
+    }
+
+    function initCollection() {
+        let collection = localStorage.getItem('creatureCollection');
+        if (!collection) {
+            const initialCollection = catImages.map(cat => ({
+                url: cat.url,
+                collected: false
+            }));
+            localStorage.setItem('creatureCollection', JSON.stringify(initialCollection));
+            return initialCollection;
+        }
+
+        try {
+            const parsedCollection = JSON.parse(collection);
+
+            if (Array.isArray(parsedCollection) && parsedCollection.length > 0) {
+                if ('count' in parsedCollection[0]) {
+                    console.log('Migrating old collection data format');
+                    const migratedCollection = parsedCollection.map(cat => ({
+                        url: cat.url,
+                        collected: cat.collected || cat.count > 0
+                    }));
+                    localStorage.setItem('creatureCollection', JSON.stringify(migratedCollection));
+                    return migratedCollection;
+                }
+
+                const validatedCollection = parsedCollection.map(cat => ({
+                    url: cat.url,
+                    collected: cat.collected === undefined ? false : cat.collected
+                }));
+
+                if (validatedCollection.length !== catImages.length) {
+                    console.log('Syncing collection with current tall-grass midnight creature stalker images');
+                    const newCollection = catImages.map(cat => {
+                        const existing = validatedCollection.find(c => 
+                            normalizeUrl(c.url) === normalizeUrl(cat.url)
+                        );
+                        return {
+                            url: cat.url,
+                            collected: existing ? existing.collected : false
+                        };
+                    });
+                    localStorage.setItem('creatureCollection', JSON.stringify(newCollection));
+                    return newCollection;
+                }
+
+                return validatedCollection;
+            }
+        } catch (e) {
+            console.error('Error parsing collection from localStorage', e);
+        }
+
+        console.log('Resetting collection due to data issues or something 👍');
+        const freshCollection = catImages.map(cat => ({
             url: cat.url,
             collected: false
         }));
-        localStorage.setItem('catCollection', JSON.stringify(initialCollection));
-        return initialCollection;
+        localStorage.setItem('catCollection', JSON.stringify(freshCollection));
+        return freshCollection;
     }
 
-    const parsedCollection = JSON.parse(collection);
-    if (parsedCollection.length > 0 && 'count' in parsedCollection[0]) {
-        const migratedCollection = parsedCollection.map(cat => ({
-            url: cat.url,
-            collected: cat.collected
-        }));
-        localStorage.setItem('catCollection', JSON.stringify(migratedCollection));
-        return migratedCollection;
-    }
+    function updateCollection(generatedCats) {
+        const collection = initCollection();
+        let updated = false;
 
-    return parsedCollection;
-}
+        generatedCats.forEach(newCat => {
+            const normalizedNewCatUrl = normalizeUrl(newCat.url);
 
-function updateCollection(generatedCats) {
-    const collection = initCollection();
+            const catIndex = collection.findIndex(cat => 
+                normalizeUrl(cat.url) === normalizedNewCatUrl
+            );
 
-    generatedCats.forEach(newCat => {
-        const baseNewCatUrl = newCat.url.split('?')[0];
-
-        const catIndex = collection.findIndex(cat => {
-            const baseCatUrl = cat.url.split('?')[0];
-            return baseCatUrl === baseNewCatUrl;
+            if (catIndex !== -1 && !collection[catIndex].collected) {
+                collection[catIndex].collected = true;
+                updated = true;
+                console.log(`New collectable unlocked: ${collection[catIndex].url}`);
+            }
         });
 
-        if (catIndex !== -1 && !collection[catIndex].collected) {
-            collection[catIndex].collected = true;
-            console.log(`New collectable unlocked: ${collection[catIndex].url}`);
+        if (updated) {
+            localStorage.setItem('creatureCollection', JSON.stringify(collection));
         }
-    });
 
-    localStorage.setItem('catCollection', JSON.stringify(collection));
-    renderCollection();
-}
-
+        renderCollection();
+    }
 
     function renderCollection() {
         const collection = initCollection();
         collectionGrid.innerHTML = '';
 
-        collection.forEach(cat => {
-            const catItem = document.createElement('div');
-            catItem.className = `cat-item ${cat.collected ? 'collected' : 'uncollected'}`;
+        console.log(`Rendering ${collection.length} collectables (should be ${catImages.length})`);
 
-            const img = document.createElement('img');
-            img.src = cat.url;
-            img.alt = "Cat collectable";
-            img.className = "collection-img";
+        collection.forEach((cat, index) => {
+            try {
+                const catItem = document.createElement('div');
+                catItem.className = `cat-item ${cat.collected ? 'collected' : 'uncollected'}`;
+                catItem.setAttribute('data-index', index);
+                catItem.setAttribute('data-url', cat.url);
 
-            const countBadge = document.createElement('div');
-            countBadge.className = "count-badge";
-            countBadge.textContent = cat.count;
+                catItem.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                    return false;
+                });
 
-            catItem.appendChild(img);
-            if (cat.count > 0) {
-                catItem.appendChild(countBadge);
+                const img = document.createElement('img');
+                img.src = cat.url;
+                img.alt = "Cat collectable";
+                img.className = "collection-img";
+
+                img.addEventListener('dragstart', (e) => {
+                    e.preventDefault();
+                    return false;
+                });
+
+                img.onerror = function() {
+                    console.error(`Failed to load image: ${cat.url}`);
+
+                    this.style.display = 'none';
+
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'image-error';
+                    errorDiv.textContent = cat.collected ? 'COLLECTED' : '???';
+                    errorDiv.style.color = 'white';
+                    errorDiv.style.fontSize = '14px';
+                    errorDiv.style.display = 'flex';
+                    errorDiv.style.alignItems = 'center';
+                    errorDiv.style.justifyContent = 'center';
+                    errorDiv.style.height = '100%';
+                    errorDiv.style.backgroundColor = '#333';
+
+                    catItem.appendChild(errorDiv);
+                };
+
+                catItem.appendChild(img);
+                collectionGrid.appendChild(catItem);
+            } catch (e) {
+                console.error(`Error rendering cat at index ${index}:`, e);
             }
-
-            collectionGrid.appendChild(catItem);
         });
     }
 
@@ -173,9 +277,13 @@ function updateCollection(generatedCats) {
     });
 
     function loadRandomCats() {
-        imageContainerEl.innerHTML = "";
-        let generatedCats = [];
+        const scrollPosition = window.scrollY;
 
+        imageContainerEl.innerHTML = "";
+
+        void imageContainerEl.offsetHeight;
+
+        let generatedCats = [];
         let availableImages = [...catImages];
 
         for (let i = 0; i < 3 && availableImages.length > 0; i++) {
@@ -200,14 +308,35 @@ function updateCollection(generatedCats) {
 
             const newImgEl = document.createElement("img");
             newImgEl.src = selectedImage.url;
-            newImgEl.alt = "Once again, a random creature of the night that stalks deep with-in thy tall grass image";
+            newImgEl.alt = "Random creature who thy stalks from the tall grass image at the dawn of midnight.";
+            newImgEl.loading = "lazy";
+
+            newImgEl.onerror = function() {
+                console.error(`Failed to load cat image: ${selectedImage.url}`);
+                this.style.backgroundColor = '#333';
+                this.style.opacity = '0.5';
+            };
+
+            setTimeout(() => {
+                imageWrapper.classList.add("fade-in");
+            }, 10);
 
             imageWrapper.appendChild(rarityText);
             imageWrapper.appendChild(newImgEl);
             imageContainerEl.appendChild(imageWrapper);
 
-            availableImages = availableImages.filter(img => img.url !== selectedImage.url);
+            availableImages = availableImages.filter(img => 
+                normalizeUrl(img.url) !== normalizeUrl(selectedImage.url)
+            );
         }
+
+        requestAnimationFrame(() => {
+            window.scrollTo(0, scrollPosition);
+
+            setTimeout(() => {
+                window.scrollTo(0, scrollPosition);
+            }, 50);
+        });
 
         updateCollection(generatedCats);
     }
