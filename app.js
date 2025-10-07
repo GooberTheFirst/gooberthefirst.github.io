@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCollection(generatedCats) {
         const collection = initCollection();
         let updated = false;
+        const newCollectables = [];
 
         generatedCats.forEach(newCat => {
             const normalizedNewCatUrl = normalizeUrl(newCat.url);
@@ -189,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (catIndex !== -1 && !collection[catIndex].collected) {
                 collection[catIndex].collected = true;
                 updated = true;
+                newCollectables.push(newCat);
                 console.log(`New collectable unlocked: ${collection[catIndex].url}`);
             }
         });
@@ -198,6 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         renderCollection();
+
+        return newCollectables;
     }
 
     function renderCollection() {
@@ -276,70 +280,92 @@ document.addEventListener("DOMContentLoaded", () => {
         loadRandomCats();
     });
 
-    function loadRandomCats() {
-        const scrollPosition = window.scrollY;
+function loadRandomCats() {
+    const scrollPosition = window.scrollY;
 
-        imageContainerEl.innerHTML = "";
+    imageContainerEl.innerHTML = "";
 
-        void imageContainerEl.offsetHeight;
+    void imageContainerEl.offsetHeight;
 
-        let generatedCats = [];
-        let availableImages = [...catImages];
+    let generatedCats = [];
+    let availableImages = [...catImages];
 
-        for (let i = 0; i < 3 && availableImages.length > 0; i++) {
-            const selectedImage = getRandomCatImage(availableImages);
-            generatedCats.push(selectedImage);
+    for (let i = 0; i < 3 && availableImages.length > 0; i++) {
+        const selectedImage = getRandomCatImage(availableImages);
+        generatedCats.push(selectedImage);
 
-            const percentageValue = selectedImage.weight;
+        const percentageValue = selectedImage.weight;
 
-            const imageWrapper = document.createElement("div");
-            imageWrapper.className = "image-wrapper";
+        const imageWrapper = document.createElement("div");
+        imageWrapper.className = "image-wrapper";
 
-            const rarityText = document.createElement("div");
-            rarityText.className = "rarity-text";
+        const rarityText = document.createElement("div");
+        rarityText.className = "rarity-text";
 
-            if (percentageValue < 10) {
-                rarityText.classList.add("golden-rarity");
-            } else if (percentageValue < 50) {
-                rarityText.classList.add("copper-rarity");
-            }
-
-            rarityText.textContent = percentageValue.toFixed(2) + "% rarity";
-
-            const newImgEl = document.createElement("img");
-            newImgEl.src = selectedImage.url;
-            newImgEl.alt = "Random creature who thy stalks from the tall grass image at the dawn of midnight.";
-            newImgEl.loading = "lazy";
-
-            newImgEl.onerror = function() {
-                console.error(`Failed to load cat image: ${selectedImage.url}`);
-                this.style.backgroundColor = '#333';
-                this.style.opacity = '0.5';
-            };
-
-            setTimeout(() => {
-                imageWrapper.classList.add("fade-in");
-            }, 10);
-
-            imageWrapper.appendChild(rarityText);
-            imageWrapper.appendChild(newImgEl);
-            imageContainerEl.appendChild(imageWrapper);
-
-            availableImages = availableImages.filter(img => 
-                normalizeUrl(img.url) !== normalizeUrl(selectedImage.url)
-            );
+        if (percentageValue < 10) {
+            rarityText.classList.add("golden-rarity");
+        } else if (percentageValue < 50) {
+            rarityText.classList.add("copper-rarity");
         }
 
-        requestAnimationFrame(() => {
+        rarityText.textContent = percentageValue.toFixed(2) + "% rarity";
+
+        const newImgEl = document.createElement("img");
+        newImgEl.src = selectedImage.url;
+        newImgEl.alt = "Random creature who thy stalks from the tall grass image at the dawn of midnight.";
+        newImgEl.loading = "lazy";
+
+        newImgEl.onerror = function() {
+            console.error(`Failed to load goober cat image: ${selectedImage.url}`);
+            this.style.backgroundColor = '#333';
+            this.style.opacity = '0.5';
+        };
+
+        setTimeout(() => {
+            imageWrapper.classList.add("fade-in");
+        }, 10);
+
+        imageWrapper.appendChild(rarityText);
+        imageWrapper.appendChild(newImgEl);
+        imageContainerEl.appendChild(imageWrapper);
+
+        availableImages = availableImages.filter(img => 
+            normalizeUrl(img.url) !== normalizeUrl(selectedImage.url)
+        );
+    }
+
+    requestAnimationFrame(() => {
+        window.scrollTo(0, scrollPosition);
+
+        setTimeout(() => {
             window.scrollTo(0, scrollPosition);
 
-            setTimeout(() => {
-                window.scrollTo(0, scrollPosition);
-            }, 50);
-        });
+            const newCollectables = updateCollection(generatedCats);
 
-        updateCollection(generatedCats);
-    }
+            if (newCollectables.length > 0) {
+                setTimeout(() => {
+                    const imageWrappers = document.querySelectorAll('.image-wrapper');
+                    imageWrappers.forEach(wrapper => {
+                        const img = wrapper.querySelector('img');
+                        if (img) {
+                            const imgSrc = img.src;
+                            if (newCollectables.some(cat => 
+                                normalizeUrl(cat.url) === normalizeUrl(imgSrc))) {
+
+                                if (!wrapper.querySelector('.new-label')) {
+                                    const newLabel = document.createElement('div');
+                                    newLabel.className = 'new-label';
+                                    newLabel.textContent = 'NEW';
+                                    wrapper.appendChild(newLabel);
+                                }
+                            }
+                        }
+                    });
+                }, 50);
+            }
+        }, 50);
+    });
+}
 
     function getRandomCatImage(images) {
         const totalWeight = images.reduce((sum, item) => sum + item.weight, 0);
