@@ -1,3 +1,4 @@
+    /* hi👋 */
     body {
         margin: 0;
         display: flex;
@@ -197,6 +198,7 @@
 
     .collection-img {
         width: 100%;
+    ;
         height: 100%;
         object-fit: cover;
         display: block;
@@ -280,15 +282,37 @@
         }
 
         .image-wrapper {
-            width: 650px;
-            height: 650px;
+            width: 95vw;
+            max-width: 650px;
+            height: auto;
+            aspect-ratio: 1/1;
+            margin: 5px auto;
             flex-shrink: 0;
         }
 
         .img-container img {
-            width: 650px;
-            height: 650px;
+            width: 100%;
+            height: auto;
+            max-width: 650px;
+            aspect-ratio: 1/1;
             flex-shrink: 0;
+            margin: 5px auto;
+        }
+
+        .rarity-text {
+            top: calc(2.5% + 5px);
+            left: calc(2.5% + 5px);
+            padding: 3px 8px;
+            font-size: 0.8em;
+            min-width: 80px;
+        }
+
+        .new-label {
+            top: calc(2.5% + 5px);
+            right: calc(2.5% + 5px);
+            padding: 3px 10px 3px 15px;
+            font-size: 0.8em;
+            text-indent: 0;
         }
 
         .btn {
@@ -305,22 +329,5 @@
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 8px;
             padding: 10px;
-        }
-
-        .cat-item {
-            aspect-ratio: 1/1;
-        }
-
-        .new-label {
-            right: 12px;
-            top: 12px;
-            padding: 6px 15px 6px 20px;
-            text-indent: 0;
-        }
-
-        .rarity-text {
-            top: 12px;
-            left: 12px;
-            padding: 6px 12px;
         }
     }
