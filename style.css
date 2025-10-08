@@ -198,7 +198,6 @@
 
     .collection-img {
         width: 100%;
-    ;
         height: 100%;
         object-fit: cover;
         display: block;
@@ -310,15 +309,18 @@
         .new-label {
             top: calc(2.5% + 5px);
             right: calc(2.5% + 5px);
-            padding: 3px 10px 3px 15px;
+            padding: 3px 12px;
             font-size: 0.8em;
             text-indent: 0;
+            min-width: auto;
+            width: auto;
         }
 
         .btn {
             width: calc(100% - 20px);
             max-width: 650px;
             padding: 12px 15px;
+            font-size: 0.9em;
         }
 
         .collection-modal {
