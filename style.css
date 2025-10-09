@@ -192,6 +192,15 @@
         transition: all 0.3s ease;
     }
 
+    .collected {
+        cursor: pointer;
+    }
+
+    .uncollected {
+        cursor: default;
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+    }
+
     .cat-item:hover {
         transform: scale(1.05);
     }
@@ -241,10 +250,6 @@
         filter: none;
     }
 
-    .uncollected {
-        border: 2px dashed rgba(255, 255, 255, 0.2);
-    }
-
     .new-label {
         position: absolute;
         top: 15px;
@@ -264,6 +269,68 @@
         text-align: center;
         font-family: monospace;
         text-indent: -3px;
+    }
+
+    .fullscreen-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+
+        pointer-events: auto;
+        -webkit-user-drag: none;
+        user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .fullscreen-modal * {
+        pointer-events: none;
+        -webkit-user-drag: none;
+        user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .fullscreen-modal.fade-in {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        pointer-events: auto;
+    }
+
+    .fullscreen-img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        cursor: default;
+
+        pointer-events: auto;
+        -webkit-user-drag: none;
+        user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     @media (max-width: 768px) {
@@ -331,5 +398,9 @@
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 8px;
             padding: 10px;
+        }
+
+        .fullscreen-img {
+            max-height: 70vh;
         }
     }

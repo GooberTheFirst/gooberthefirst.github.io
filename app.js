@@ -79,11 +79,23 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.body.appendChild(collectionModal);
 
+    const fullscreenModal = document.createElement('div');
+    fullscreenModal.id = 'fullscreen-modal';
+    fullscreenModal.className = 'fullscreen-modal hidden';
+    fullscreenModal.innerHTML = `
+        <div class="modal-content">
+            <img src="" alt="Full screen collectable" class="fullscreen-img">
+        </div>
+    `;
+    document.body.appendChild(fullscreenModal);
+
     const imageContainerEl = document.querySelector(".img-container");
     const btnEl = document.querySelector(".btn");
     const collectionBtn = document.getElementById('collection-btn');
     const closeBtn = document.querySelector('.close-btn');
     const collectionGrid = document.querySelector('.collection-grid');
+    const fullscreenImg = document.querySelector('#fullscreen-modal .fullscreen-img');
+    const modalContent = document.querySelector('#fullscreen-modal .modal-content');
 
     if (!imageContainerEl) {
         console.error('Error: .img-container element not found');
@@ -216,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 catItem.className = `cat-item ${cat.collected ? 'collected' : 'uncollected'}`;
                 catItem.setAttribute('data-index', index);
                 catItem.setAttribute('data-url', cat.url);
+                catItem.setAttribute('data-collected', cat.collected);
 
                 catItem.addEventListener('contextmenu', (e) => {
                     e.preventDefault();
@@ -258,6 +271,64 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    collectionGrid.addEventListener('click', (e) => {
+        const catItem = e.target.closest('.cat-item');
+        if (!catItem) return;
+
+        const isCollected = catItem.getAttribute('data-collected') === 'true';
+
+        if (!isCollected) return;
+
+        const imgUrl = catItem.getAttribute('data-url');
+
+        fullscreenImg.src = imgUrl;
+
+        fullscreenModal.classList.remove('hidden');
+
+        void fullscreenModal.offsetWidth;
+        fullscreenModal.classList.add('fade-in');
+    });
+
+    fullscreenModal.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    modalContent.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    fullscreenImg.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    fullscreenImg.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    fullscreenModal.addEventListener('click', (e) => {
+        if (e.target === fullscreenModal || e.target === modalContent) {
+            fullscreenModal.classList.remove('fade-in');
+
+            setTimeout(() => {
+                fullscreenModal.classList.add('hidden');
+            }, 300);
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !fullscreenModal.classList.contains('hidden')) {
+            fullscreenModal.classList.remove('fade-in');
+
+            setTimeout(() => {
+                fullscreenModal.classList.add('hidden');
+            }, 300);
+        }
+    });
 
     collectionBtn.addEventListener('click', () => {
         collectionModal.classList.remove('hidden');
